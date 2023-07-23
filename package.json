@@ -1,0 +1,21 @@
+{
+  "name": "waves",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "bun": "bun build --watch --outdir ./dist src/index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "fft.js": "^4.0.4",
+    "gl-matrix": "^3.4.3",
+    "lil-gui": "^0.18.2",
+    "mathjax": "^3.2.2",
+    "regl": "^2.1.0"
+  }
+}

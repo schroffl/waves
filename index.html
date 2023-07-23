@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Wave Equation</title>
+
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <style>
+            html {
+                font-family: sans-serif;
+
+                background-color: #F4F2DE;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: 100;
+                margin-bottom: 8px;
+            }
+
+            .separator {
+                --height: 1px;
+
+                height: var(--height);
+                border-radius: calc(var(--height) / 2);
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 100%;
+            }
+
+            body {
+                margin: 0px;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text {
+                width: 60vw;
+            }
+
+            .canvas-container {
+                width: 60vw;
+                box-sizing: border-box;
+                background-color: #A1CCD1;
+                height: 50vh;
+                box-shadow: 0px 2px 10px -4px #6d6d6d;
+
+                position: relative;
+
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .canvas-container.square {
+                width: calc(min(60vw, 90vh));
+                height: unset;
+                aspect-ratio: 1;
+            }
+
+            .canvas-container .lil-gui.root {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+
+            canvas {
+                width: 100%;
+                height: 100%;
+
+                box-sizing: border-box;
+                user-select: none;
+            }
+
+            section {
+                margin-top: 64px;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                html {
+                    background-color: #333;
+                    color: #fefefe;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <main>
+            <div class="text">
+                <h2>Wave Equation</h2>
+                <div class="separator"></div>
+
+                <p>
+                    Exploring the wave equation.
+                </p>
+            </div>
+
+            <div class="text">
+                <p>One dimensional</p>
+            </div>
+
+            $$\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$$
+
+            <div class="canvas-container" id="placeholder-one-dimensional"></div>
+
+            <div class="text">
+                <p>Two dimensional</p>
+            </div>
+
+            $$\frac{\partial^2 u}{\partial t^2} = c^2 \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right)$$
+
+            <div class="canvas-container square" id="placeholder-two-dimensional"></div>
+        </main>
+
+        <script src="./dist/index.js"></script>
+    </body>
+</html>
