@@ -3,10 +3,11 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "bun": "bun build --watch --outdir ./dist src/index.ts"
+    "build": "esbuild --bundle --outdir=./dist src/index.ts --sourcemap",
+    "watch": "npm run build -- --watch"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "esbuild": "^0.19.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
